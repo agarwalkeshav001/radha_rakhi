@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Radha Rakhi</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+ 
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
+
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/products.css" rel="stylesheet">
+  <link href="css/media.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <style>
+input[type=text] {
+  width: 95%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+
+
+html,body {
+padding-right:0px !important;
+margin-right:0px !important;
+padding: 0 !important;
+}
+
+.sized{
+  font-size: 1.2em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+  </style>
+</head>
+ <body>
+  
+  <header id="header">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <a href="/index#hero"><img src="img/logo.png" alt="" title="" /></img></a>
+        
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/index#about">About Us</a></li>
+          <li><a href="/index#portfolio">Portfolio</a></li>
+          <li class="menu-active" ><a href="/shop">Products</a></li>
+          <li><a href="/index#contact">Contact Us</a></li>
+          <% if(!userinfo.user){ %>
+          <li ><a href="/login">Login</a></li>
+          <% } %>
+          <% if(userinfo.user && userinfo.role == 'member'){ %>
+            <li><a href ="/member"><i class='fas fa-user-circle'></i> <%= userinfo.user %></a></li>
+            <li><a href ="/logout">Logout</a></li>
+
+          <% } %>
+          <% if(userinfo.user && userinfo.role == 'admin'){ %>
+            <li><a href ="/admin"><i class='fas fa-user-circle'></i> <%= userinfo.user %></a></li>
+            <li><a href ="/logout">Logout</a></li>
+          <% } %>
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+    </div>
+  </header>
+ <br>
+
+
+  
+ <div class="container">
+  <button type="button" id="cartbtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cart" style="float:right;">Cart (<span class="total-count"></span>)</button>
+      &nbsp; <button type="button" class="clear-cart btn btn-danger btn-lg" style="float: right;">Clear Cart</button>
+      <br><br><br><br>
+    <input type="text" id="myInput" name="search" placeholder="Search..">
+    </div>
+ </div>
+</div>
+   
+  
+    
+  
+  
+ 
+  <br>
+ 
+  <div class="myDIV">
+    <div class="container">
+   
+
+      <% prods.forEach(function (prod) { %>
+      <div class="col-md-3" >
+        <figure class="card card-product">
+          <div class="img-wrap"> <a href="/image/<%=prod.img %>" target="_blank"><img src="img/loading.gif" data-src="image/<%= prod.img %>" class="img-thumbnail lazy"></a>
+            
+          </div>
+          <figcaption class="info-wrap">
+            <h4 class="title text-dots">Model Name:<br><h4 class="title text-dots"> <%= prod.name %></h4><h4 align="right">Packaging:<br><h4 class="title text-dots" align="right"><%= prod.pieces %><%= prod.typequan %><%= prod.pricequan %></h4><br></h5></h4>
+            
+            <br><h4 class="title text-dots"i><%=prod.type %></h5> <h5 class="title text-dots" hidden><%=prod.typ %></h5>
+            <div class="action-wrap">
+              <a href="#" data-name="<%= prod.name %>" data-price="<%= prod.price %>" class="add-to-cart btn btn-primary float-right"> Add To Cart </a>
+              <div class="price-wrap h4">
+                <span class="price-new">INR <%= prod.price %><%= prod.sprice %><%= prod.pricequan%></span>
+                
+              </div> 
+            </div> 
+          </figcaption>
+        </figure> 
+      </div> 
+      <% }) %>
+      
+    </div>
+    
+    </div>
+
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabel">Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="printThis">
+          <div class="modal-body sized">
+            <table class="show-cart table size">
+              
+            </table>
+            <div id="totalpr">Total price: INR <span class="total-cart" id="total"></span></div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button id="btnPrint" type="button" class="btn btn-secondary">Print</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#demo">Proceed</button>
+            
+            
+          </div>
+          <div id="demo" class="collapse">
+            <h4>All required fields are marked as *</h4>
+            <form method="post" action="/cart" name="myForm" id="myform">
+              <h4>
+              <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                  <i class="fas fa-user-alt"></i>
+                  <label data-error="wrong" data-success="right" for="defaultForm-email">Name*</label>
+                  <input type="name" id="name" class="form-control validate" required>
+                 
+                </div>
+        
+                <div class="md-form mb-4">
+                  <i class="fas fa-briefcase"></i>
+                  <label data-error="wrong" data-success="right" for="defaultForm-pass">Firm Name</label>
+                  <input type="name" id="firm" class="form-control validate">
+                  
+                </div>
+                </div>
+                <div class="modal-body mx-3">
+                  <div class="md-form mb-5">
+                    <i class="fa fa-envelope"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">E-mail</label>
+                    <input type="name" id="email" class="form-control validate">
+                   
+                  </div>
+          
+                  <div class="md-form mb-4">
+                    <i class="	fa fa-phone-square"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass" >Mobile No.*(only numerics)</label>
+                    <input type="number" id="phone"  class="form-control validate" required>
+                    
+                  </div>
+                  <div class="md-form mb-4">
+                    <i class="	fa fa-phone-square"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass" >Mobile No.(only numerics)</label>
+                    <input type="nubmer" id="phn"  class="form-control validate">
+                    
+                  </div>
+                  </div>
+                    <div class="modal-body mx-3">
+                      <div class="md-form mb-5">
+                        <i class="fa fa-address-book"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-address">Address*</label>
+                        <input type="name" id="address" class="form-control validate" required>
+                       
+                      </div>
+                      <div class="md-form mb-5">
+                        <i class="fa fa-address-book"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-city">City*</label>
+                        <input type="name" id="city" class="form-control validate" required>
+                       
+                      </div>
+                      <div class="md-form mb-5">
+                        <i class="fa fa-address-book"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-state" required>State*</label>
+                        <input type="name" id="state" class="form-control validate">
+                       
+                      </div>
+                      <div class="md-form mb-5">
+                        <i class="fa fa-address-book"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-zip" required>Postal Code*</label>
+                        <input type="number" id="zip" class="form-control validate" required>
+                       
+                      </div>
+                      
+                      <div class="md-form mb-5">
+                        <i class="fa fa-address-book"></i>
+                        <label data-error="wrong" data-success="right" for="defaultForm-country" required>Country*</label>
+                        <input type="name" id="country" class="form-control validate" required>
+                       
+                      
+                      </div>
+                      <div class="md-form mb-5">
+                      <b>Comments(optional)</b><br>
+                      <textarea id="textareaChars" maxlength="100" value="" style="width: 100%; height:100px"></textarea>
+                        <span id="chars">100</span> characters remaining
+                      </div>
+                    </div>      
+              </h4>     
+                    <h4 id="myAnchor" style="color:red"></h4>
+                    <h4 id="myanchor" style="color:red"></h4>
+                  <input type="button" value="proceed" onclick="btnclick()" class="btn btn-primary" style="float: right;">
+                </h4>
+            </form>
+            <br><br><hr>
+          </div>
+        </div>
+      </div>
+    </div>   
+    
+    <!-- Required JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/morphext/morphext.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/easing/easing.js"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="js/custom.js"></script>
+
+  <script src="contactform/contactform.js"></script>
+  
+  <script>
+
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".col-md-3").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+
+
+var shoppingCart = (function() {
+  cart = [];
+  
+  
+  function Item(name, price, count) {
+    this.name = name;
+    this.price = price;
+    this.count = count;
+
+  }
+  
+  
+  function saveCart() {
+    sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+  }
+  
+  
+  function loadCart() {
+    cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+  }
+  if (sessionStorage.getItem("shoppingCart") != null) {
+    loadCart();
+  }
+  
+
+  
+  var obj = {};
+  
+  
+  obj.addItemToCart = function(name, price, count) {
+    for(var item in cart) {
+      if(cart[item].name === name) {
+        cart[item].count ++;
+        saveCart();
+        return;
+      }
+    }
+    var item = new Item(name, price, count);
+    cart.push(item);
+    saveCart();
+  }
+  
+  obj.setCountForItem = function(name, count) {
+    for(var i in cart) {
+      if (cart[i].name === name) {
+        cart[i].count = count;
+        break;
+      }
+    }
+  };
+  
+  obj.removeItemFromCart = function(name) {
+      for(var item in cart) {
+        if(cart[item].name === name) {
+          cart[item].count --;
+          if(cart[item].count === 0) {
+            cart.splice(item, 1);
+          }
+          break;
+        }
+    }
+    saveCart();
+  }
+
+  // Remove all items from cart
+  obj.removeItemFromCartAll = function(name) {
+    for(var item in cart) {
+      if(cart[item].name === name) {
+        cart.splice(item, 1);
+        break;
+      }
+    }
+    saveCart();
+  }
+
+  // Clear cart
+  obj.clearCart = function() {
+    cart = [];
+    saveCart();
+  }
+
+  // Count cart 
+  obj.totalCount = function() {
+    var totalCount = 0;
+    for(var item in cart) {
+      totalCount += cart[item].count;
+    }
+    return totalCount;
+  }
+
+  // Total cart
+  obj.totalCart = function() {
+    var totalCart = 0;
+    for(var item in cart) {
+      totalCart += cart[item].price * cart[item].count;
+    }
+    return Number(totalCart.toFixed(2));
+  }
+
+  // List cart
+  obj.listCart = function() {
+    var cartCopy = [];
+    for(i in cart) {
+      item = cart[i];
+      itemCopy = {};
+      for(p in item) {
+        itemCopy[p] = item[p];
+
+      }
+      itemCopy.total = Number(item.price * item.count).toFixed(2);
+      cartCopy.push(itemCopy)
+    }
+    return cartCopy;
+  }
+
+  
+  return obj;
+})();
+
+
+
+$('.add-to-cart').click(function(event) {
+  event.preventDefault();
+  var name = $(this).data('name');
+  var price = Number($(this).data('price'));
+  shoppingCart.addItemToCart(name, price, 1);
+  displayCart();
+});
+
+// Clear items
+$('.clear-cart').click(function() {
+  shoppingCart.clearCart();
+  displayCart();
+});
+
+
+function displayCart() {
+  var cartArray = shoppingCart.listCart();
+  var output = "";
+  for(var i in cartArray) {
+    output += "<tr>"
+      + "<td id ='product_name'>" + cartArray[i].name + "</td>" 
+      + "<td id = 'product _price'>(" + cartArray[i].price + ")</td>"
+      + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
+      + "<input type='number' class='item-count form-control' id='product_count' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+      + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
+      + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
+      + " = " 
+      + "<td id= 'total_price'>" + cartArray[i].total + "</td>" 
+      +  "</tr>";
+  }
+  $('.show-cart').html(output);
+  $('.total-cart').html(shoppingCart.totalCart());
+  $('.total-count').html(shoppingCart.totalCount());
+}
+
+// Delete item button
+
+$('.show-cart').on("click", ".delete-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.removeItemFromCartAll(name);
+  displayCart();
+})
+
+
+// -1
+$('.show-cart').on("click", ".minus-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.removeItemFromCart(name);
+  displayCart();
+})
+// +1
+$('.show-cart').on("click", ".plus-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.addItemToCart(name);
+  displayCart();
+})
+
+// Item count input
+$('.show-cart').on("change", ".item-count", function(event) {
+   var name = $(this).data('name');
+   var count = Number($(this).val());
+  shoppingCart.setCountForItem(name, count);
+  displayCart();
+});
+
+displayCart();
+
+
+//////////////////////
+
+  function submitData(){
+    
+    var name = $("#name").val();
+    var firm = $("#firm").val();
+    var mail = $("#email").val();
+    var phone = $("#phone").val();
+    var phn = $("#phn").val();
+    var address = $("#address").val();
+    var city = $("#city").val();
+    var state = $("#state").val();
+    var zip = $("#zip").val();
+    var country =$("#country").val();
+    var total = shoppingCart.totalCart();
+    var comment= $("#textareaChars").val();
+    if (name != '' && phone != '' && address != '' && city != '' && state != '' && zip != '' && country != '') {
+
+
+      $.ajax({
+                url: "/cart",
+                type: "POST",
+                data:{name:name,firm:firm,mail:mail,phone:phone,phn:phn,address:address,city:city,state:state,zip:zip,country:country,cart:cart,total:total,comment:comment}
+            });
+    }
+   
+  }
+  //Lazy Loading
+  !function(window){
+  var $q = function(q, res){
+        if (document.querySelectorAll) {
+          res = document.querySelectorAll(q);
+        } else {
+          var d=document
+            , a=d.styleSheets[0] || d.createStyleSheet();
+          a.addRule(q,'f:b');
+          for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
+            l[b].currentStyle.f && c.push(l[b]);
+
+          a.removeRule(0);b
+          res = c;
+        }
+        return res;
+      }
+    , addEventListener = function(evt, fn){
+        window.addEventListener
+          ? this.addEventListener(evt, fn, false)
+          : (window.attachEvent)
+            ? this.attachEvent('on' + evt, fn)
+            : this['on' + evt] = fn;
+      }
+    , _has = function(obj, key) {
+        return Object.prototype.hasOwnProperty.call(obj, key);
+      }
+    ;
+
+  function loadImage (el, fn) {
+    var img = new Image()
+      , src = el.getAttribute('data-src');
+    img.onload = function() {
+      if (!! el.parent)
+        el.parent.replaceChild(img, el)
+      else
+        el.src = src;
+
+      fn? fn() : null;
+    }
+    img.src = src;
+  }
+
+  function elementInViewport(el) {
+    var rect = el.getBoundingClientRect()
+
+    return (
+       rect.top    >= 0
+    && rect.left   >= 0
+    && rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+    )
+  }
+
+    var images = new Array()
+      , query = $q('img.lazy')
+      , processScroll = function(){
+          for (var i = 0; i < images.length; i++) {
+            if (elementInViewport(images[i])) {
+              loadImage(images[i], function () {
+                images.splice(i, i);
+              });
+            }
+          };
+        }
+      ;
+    // Array.prototype.slice.call is not callable under our lovely IE8 
+    for (var i = 0; i < query.length; i++) {
+      images.push(query[i]);
+    };
+
+    processScroll();
+    addEventListener('scroll',processScroll);
+
+}(this);
+
+//Lazy Loading
+    document.getElementById("btnPrint").onclick = function () {
+    printElement(document.getElementById("printThis"));
+}
+
+function printElement(elem) {
+    var domClone = elem.cloneNode(true);
+    
+    var $printSection = document.getElementById("printSection");
+    
+    if (!$printSection) {
+        var $printSection = document.createElement("div");
+        $printSection.id = "printSection";
+        document.body.appendChild($printSection);
+    }
+    
+    $printSection.innerHTML = "";
+    $printSection.appendChild(domClone);
+    window.print();
+}
+
+function btnclick()
+{
+  var a = document.getElementById('name').value;
+  var b = document.getElementById('phone').value;
+  var c = document.getElementById('address').value;
+  var d = document.getElementById('city').value;
+  var e = document.getElementById('state').value;
+  var g = document.getElementById('country').value;
+  var h = document.getElementById('zip').value;
+
+  if(a == '' || b == '' || c == '' || d == '' || e == '' || g == '' || h == '')
+  {
+    document.getElementById("myAnchor").innerHTML= "Please fill all the required fields and check the patterns.";
+    document.getElementById("myanchor").innerHTML= "Note:-Mobile Phone and Postal Code only support numerical"
+  }
+  else
+  {
+    submitData();
+    location.replace("/checkout")
+  }
+}
+
+var maxLength = 100;
+$('textarea').keyup(function() {
+  var length = $(this).val().length;
+  var length = maxLength-length;
+  $('#chars').text(length);
+});
+
+  </script>
+
+  </body>
+</html>

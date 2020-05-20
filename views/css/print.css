@@ -1,0 +1,15 @@
+@media print {
+    body * {
+      visibility:hidden;
+      font-size: 110%;
+    }
+    #printSection, #printSection * {
+      visibility:visible;
+    }
+    #printSection {
+      position:absolute;
+      left:0;
+      top:0;
+      font-size: 1.6em;
+    }
+  }

@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Show Orders</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <style>
+            .d {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+           
+            <br>
+            <div id="printThis">
+                <% feds.forEach(function(fed){ %>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="panel panel-default panel-table">
+                            <div class="panel-heading">
+                                <div class="row" >
+                                    <div class="col col-xs-6">
+                                        <h3 class="panel-title d">Customer Info    </h3>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+            
+                            <div class="panel-body">
+                                <p>
+                                     <h5 style="word-wrap:break-word";>  
+                                        <b>Name</b>:-<%=fed.name %><br>
+                                        <b>User:-<%=fed.user%> </b><br>
+                                        <b>Mail</b>:-<%= fed.mail %><br>
+                                        <b>Time</b>:-<%= fed.timestamp %>
+                                     </h5>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="panel panel-default panel-table">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col col-xs-6">
+                                        <h3 class="panel-title">Feedback</h3>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="panel-body" >
+                               <h4 style="word-wrap:break-word";> <u><%= fed.subject %></u><br><br>
+                                <%= fed.message %> 
+                            </h4>
+                            </div>
+                            <div class="panel-footer">
+                                <h5 align="right"><button onclick="javascript:window.print()">Print</button></h5>
+                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% })%>
+            </div>
+        </div>
+    </body>
+</html>

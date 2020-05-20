@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>Show Orders</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+      
+      
+       
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/sorders.css" rel="stylesheet">
+
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+       
+  <style>
+   input[type=text] {
+    width: 95%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+        </style>
+    </head>
+    <body background-co="grey">
+        <header id="header">
+            <div class="container">
+        
+              <div id="logo" class="pull-left">
+                <a href="/index#hero"><img src="img/logo.png" alt="" title="" /></img></a>
+                
+              </div>
+        
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                  <li class="menu-active" ><a href="/admin"><i class='fas fa-user-circle'></i>  <%= userinfo.user %>  </a></li>
+                  <li><a href="/logout">Logout</a></li>
+
+                </ul>
+              </nav>
+              <!-- #nav-menu-container -->
+            </div>
+          </header><br>
+          <div class="container">
+            <br>
+            <input type="text" id="myInput" name="search" placeholder="Search..">
+            <br> <br>
+            <% orders.forEach(function (order) { %>  
+              <% if(order.name != null ){ %>
+                
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 aa">
+               
+                  <div class="box-part text-center">
+                    <div class="title">
+                      <h4>Customer</h4>
+                    </div>
+                                
+                    <div class="text">
+                      <span>
+                          Name:- <%=order.name %><br>
+                          Mobile No:- <%=order.phone%><br>
+                          <%= order._id %>
+                      </span>
+                    </div>
+                        
+                    <form method="post" action="/zoom">
+                      <button type="btn" name="oid" value="<%= order._id %>">Show Order</button>
+                      </form>
+                    
+                                
+                   </div>
+                </div>	 
+              
+               <% }}) %>   
+              
+              </div>
+              <script src="lib/jquery/jquery.min.js"></script>
+              <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+              <script src="lib/superfish/hoverIntent.js"></script>
+              <script src="lib/superfish/superfish.min.js"></script>
+              <script src="lib/morphext/morphext.min.js"></script>
+              <script src="lib/wow/wow.min.js"></script>
+              <script src="lib/stickyjs/sticky.js"></script>
+              <script src="lib/easing/easing.js"></script>
+            
+              <!-- Template Specisifc Custom Javascript File -->
+              <script src="js/custom.js"></script>
+            
+              <script src="contactform/contactform.js"></script>
+              <script>
+                $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".aa").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+              </script>
+          
+    </body>
+</html>
+
+
+ 
+
+
+
+        
+   

@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <title>Show Orders</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <style>
+            .d {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        
+    
+        
+        <div class="container">
+            <a href="javascript:window.print()" style="float:right">Print</a>
+            <br>
+            <div id="printThis">
+            <% ordes.forEach(function (orde) { %>  
+                <% if(orde.name != null ){ %>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="panel panel-default panel-table">
+                                <div class="panel-heading">
+                                    <div class="row" >
+                                        <div class="col col-xs-6">
+                                            <h3 class="panel-title d">Customer Info    </h3>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                
+                                <div class="panel-body break">
+                          <p>
+                              <h5 style="word-wrap:break-word";>  
+                                <b>Name</b>:<%=orde.name %><br>
+                                <b>Firm Name</b>:<%=orde.firm %><br>
+                                <b>Phone No</b>:<%=orde.phone %><br>
+                                <b>Second contact:</b><%=orde.phn%><br> 
+                                <b>Mail</b>:<%=orde.mail %><br>
+                                <b>Address</b>:<%=orde.address %><br>
+                                <b>City:</b><%=orde.city %>,<br>
+                                <b>State:</b><%=orde.state %><br>
+                                <b>Country:</b><%=orde.country%>,<br>
+                                <b>Postal Code:</b><%=orde.zip%><br>
+                                <b>Total</b>:INR <%= orde.total %><br>
+                                <b>Order made on</b>:<%=orde.timestamp %> by<b> <%= orde.user %> </b> <br>
+                            </h5>
+                            </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            
+                            
+                    
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title">Order</h3>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table id="mytable" class="table table-striped table-bordered table-list">
+                                <thead>
+                                <tr>
+                                   
+                                    <th class="hidden-xs">Sno</th>
+                                    <th class="col-text">Item Name</th>
+                                    <th class="col-text">Quanity</th>
+                                    <th class="col-text">Price</th>
+                                    <th class="col-text">Quantity*Price</th>
+                                </tr>
+                                </thead>
+                                <% orde.ord.forEach(function (ord,index) { %><br>
+                                <tbody>
+                                <tr >
+                                   
+                                        
+                                        
+                                        
+                                    <td class="hidden-xs">  <%= index+1 %> </td>
+                                    <td> <%=ord.name %></td>
+                                    <td><%=ord.count %></td>
+                                    <td>INR <%=ord.price %></td>
+                                    <td><%=ord.count * ord.price %></td>
+                                </tr>
+                                
+                                </tbody>
+                                
+                                <% }) %>
+                            </table>
+        
+                        </div>
+                        <div class="panel-footer">
+                            <h4 align="right"><b>Total =INR <%= orde.total %></b></h4>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row" >
+                                <div class="col col-xs-6">
+                                    <h3 class="panel-title d">Comment</h3>
+                                </div>
+                               
+                            </div>
+                        </div>
+        
+                        <div class="panel-body">
+                           <h4 style="word-wrap:break-word";> <%= orde.comment %></h4>
+                        
+                        </div>
+                        <div class="panel-footer">
+                            <h4 align="right"><b><%= orde.timestamp %></b></h4>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <% }}) %>
+            </div>
+        </div>
+          
+          
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="lib/superfish/hoverIntent.js"></script>
+        <script src="lib/superfish/superfish.min.js"></script>
+        <script src="lib/morphext/morphext.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/stickyjs/sticky.js"></script>
+        <script src="lib/easing/easing.js"></script>
+      
+        <!-- Template Specisifc Custom Javascript File -->
+        <script src="js/custom.js"></script>
+      
+        <script src="contactform/contactform.js"></script>   
+
+    </body>
+
+ </html>

@@ -1,0 +1,167 @@
+<html>
+    <meta charset="utf-8">
+    <title>Radha Rakhi</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+  
+  
+   
+    <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+    <link href="favicon.ico" rel="shortcut icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+  
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate-css/animate.min.css" rel="stylesheet">
+  
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+
+   <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+   <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+
+   <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+
+   <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+
+   <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+
+   <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+
+   <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+
+   <link rel="stylesheet" type="text/css" href="css/util.css">
+   <link rel="stylesheet" type="text/css" href="css/main.css">
+   
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+    
+          <div id="logo" class="pull-left">
+            <a href="/index#hero"><img src="img/logo.png" alt="" title="" /></img></a>
+            
+          </div>
+    
+          <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a href="/index#hero">Home</a></li>
+                <li><a href="/index#about">About Us</a></li>
+                <li><a href="/index#portfolio">Portfolio</a></li>
+                <li><a href="/shop" target="_blank">Products</a></li>
+                <li><a href="/index#contact">Contact Us</a></li>
+                <li class="menu-active" ><a href="/member"><i class='fas fa-user-circle'></i>  <%= userinfo.user %> </a></li>
+                <li><a href="/logout">Logout</a></li>
+                
+            </ul>
+          </nav>
+          <!-- #nav-menu-container -->
+        </div>
+      </header>
+      <!-- #header -->
+      <br>
+      <div class="container">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a data-toggle="tab" href="#orders">Orders</a></li>
+          <li><a data-toggle="tab" href="#change">Change Password</a></li>
+        </ul>
+        <div class="tab-content">
+         <br><br>
+          <div id="orders" class="tab-pane fade in active">
+            <% userorders.forEach(function (userorder) { %>  
+              <% if(userorder.name != null ){ %>
+            <div class="panel panel-default panel-order">
+              <div class="panel-heading">
+                  <strong>Order history</strong>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                <div class="col-md-11">
+                  <div class="row">
+                    <div class="col-md-12">
+                    <span><strong>Order Items</strong></span><br>
+                    
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Prod. Name</th>
+                          <th>Quantity</th>
+                          <th>Price/Quantity</th>
+                        </tr>
+                      </thead>
+                  <% userorder.ord.forEach(function (ord) { %><br>
+                    
+                          <tbody>
+                              <tr>
+                                  <td> <%=ord.name %></td>
+                                  <td><%=ord.count %></td>
+                                  <td>INR <%=ord.price %></td>
+                                </tr>
+                          </tbody>
+                          
+                          <% }) %>
+                    </table>
+                  </div>
+                  
+                  <div class="col-md-12">
+                    <b>Total:- INR <%= userorder.total%></b><br>
+                  Order made on: <%= userorder.timestamp%> by <a href="#"><%= userorder.user %> </a>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <% }}) %>
+          </div>
+          
+          <div id="change" class="tab-pane fade">
+            
+            <div class="limiter">
+              <div class="container-login100">
+                <div class="wrap-login100">
+                  <form class="login100-form validate-form" method="post" action="/changepassword">
+          
+                    <span class="login100-form-title p-b-34 p-t-27">
+                      Change Password
+                    </span>
+                    
+            <div class="wrap-input100 validate-input" data-validate="Enter password">
+              <input class="input100" type="password" name="password" placeholder="Enter New Password">
+            </div>
+              <div class="container-login100-form-btn">
+                <button class="login100-form-btn">
+                  Submit
+                </button>
+              </div>
+              </form>
+    
+              
+            </div>
+          </div>
+      </div>
+    </div>
+      <script>
+        $(document).ready(function(){
+          $(".nav-tabs a").click(function(){
+            $(this).tab('show');
+          });
+        });
+        </script>
+</body>
+</html>
